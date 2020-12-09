@@ -1,0 +1,53 @@
+main{
+	position:fixed;
+	top: 100px;
+	left:300px;
+}
+
+
+.login-form{
+	position:relative;
+	padding-top:100px;
+	padding-left:50px;
+	
+	height:200px;
+	width:400px;
+	margin:auto;
+	background-color: #FF0800;
+	
+}
+
+.input{
+	margin: 10px;
+	
+}
+
+label{
+	display: inline-block;
+	width: 100px;
+}
+
+.input button{
+	position:relative;
+	height:30px;
+	width:100px;
+	left:125px;
+	margin:0 auto;
+	color:red;
+	background:white;
+	border:solid 0.5px red;
+	border-radius: 2px;
+}
+
+input{
+	border:none;
+	background:crimson;
+	color:white;
+}
+
+.message-box{
+	border:solid orange 1px;
+	border-radius:5px;
+	background: orange;
+	width:90%;
+}

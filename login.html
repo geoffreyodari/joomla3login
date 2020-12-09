@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Log in page</title>
+</head>
+
+<body>
+
+    <main>
+		<div class="login-form">
+			<div class="input">
+				<label for="username">Username</label><input type="text" name="username" id="username">
+			</div>
+			<div class="input">
+				<label for="password">Password</label><input type="password" name="password" id="password">
+			</div>
+			<div class="input submit">
+				<button id="submit">login</button>
+			</div>
+			<div class="message-box">Please log in</div>
+		</div>
+    </main>
+<script>
+
+	
+	const url = "http://localhost/helpdesk/index.php";
+	
+	const responseMessage = function(message){
+		document.querySelector('.message-box').innerHTML= `${message.message}`;	
+	}
+
+	const mylogin = function(url){
+		let username = document.querySelector('#username').value;
+		let password = document.querySelector('#password').value;
+		let params=`username=${username}&password=${password}`;
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST",url);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.addEventListener('readystatechange',function(){
+			if(xhr.status==200){
+				let message=JSON.parse(xhr.responseText);
+				responseMessage(message);
+			}
+		});
+		xhr.send(params);
+	}
+	
+
+	document.querySelector('#submit').addEventListener('click',()=>mylogin(url));
+	</script>
+</body>
+</html>
