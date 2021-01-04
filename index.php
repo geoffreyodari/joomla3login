@@ -29,7 +29,7 @@ function success_login($user){
 }
 
 function fail_login($user){
-	echo '{ "success": true,"message": "Login failed","data": "Wrong username or password"}';
+	echo '{ "success": false,"message": "Login failed","data": "Wrong username or password"}';
 }
 
 ?>
