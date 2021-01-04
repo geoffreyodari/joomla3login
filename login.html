@@ -23,36 +23,11 @@
 			<div class="input submit">
 				<button id="submit">login</button>
 			</div>
-			<div class="message-box">Please log in</div>
+			<div class="message-box"><p>Please log in</p></div>
 		</div>
+		
     </main>
-<script>
-
-	
-	const url = "http://localhost/helpdesk/index.php";
-	
-	const responseMessage = function(message){
-		document.querySelector('.message-box').innerHTML= `${message.message}`;	
-	}
-
-	const mylogin = function(url){
-		let username = document.querySelector('#username').value;
-		let password = document.querySelector('#password').value;
-		let params=`username=${username}&password=${password}`;
-		let xhr = new XMLHttpRequest();
-		xhr.open("POST",url);
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-		xhr.addEventListener('readystatechange',function(){
-			if(xhr.status==200){
-				let message=JSON.parse(xhr.responseText);
-				responseMessage(message);
-			}
-		});
-		xhr.send(params);
-	}
-	
-
-	document.querySelector('#submit').addEventListener('click',()=>mylogin(url));
+<script src="user.js">
 	</script>
 </body>
 </html>
