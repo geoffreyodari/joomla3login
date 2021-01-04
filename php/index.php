@@ -1,7 +1,7 @@
 <?php
 
 define('_JEXEC', 1);
-define('JPATH_BASE', '../sunset/');//relative path to the joomla site
+define('JPATH_BASE', '../../sunset/');//relative path to the joomla site
 require_once JPATH_BASE . 'includes/defines.php';
 require_once JPATH_BASE . 'includes/framework.php';
 

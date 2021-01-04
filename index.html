@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id='name'></p>
+    <p id='username'></p>
+    <p id='email'></p>
+    <script>
+        if(sessionStorage.user == null){
+            window.location.href = "http://localhost/joomla3login/login.html" 
+        }else{
+            document.querySelector('#name').innerHTML=JSON.parse(sessionStorage.user).data.name;
+            document.querySelector('#username').innerHTML=JSON.parse(sessionStorage.user).data.username;
+            document.querySelector('#email').innerHTML=JSON.parse(sessionStorage.user).data.email;
+        }
+    </script>
+</body>
+</html>
